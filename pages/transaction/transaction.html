@@ -66,6 +66,8 @@
                 <div><label>Descriçao</label></div>
                 <input type="text" id="description">
             </div>
+            <input type="file" id="image" />
+            <progress value="0"></progress>
             <button type="button" class="solid" disabled id="save-button"
                 onclick="saveTransaction()">
                 Salvar
@@ -81,6 +83,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
 <script src="../../firebase-init.js"></script>
 <script src="../../auth-guard.js"></script>
 <script src="../../loading.js"></script>

@@ -1,3 +1,22 @@
+const storage = firebase.storage();
+const input = document.querySelector('input[type=file]');
+
+
+input.addEventListener('change', (e)=>{
+    let file = e.target.files[0];
+    const uploadTask = storage.ref('produtos/' + e.target.files[0].name)
+    .put(e.target.files[0]);
+
+    uploadTask.on("state_changed", function(snapshot){
+        let progress = (snapshot.bytesTransferred/snapshot.totalBytes) * 1;
+
+        document.querySelector('progress').value = progress;
+
+    }, function(error){}, function(){
+        console.log("Upload feito!")
+    })
+})
+
 function logout() {
     firebase.auth().signOut().then(() => {
         window.location.href = "../../index.html";
@@ -161,8 +180,7 @@ function cancelar() {
     window.location.href = "../home/home.html";
 }
 function salvarImagem(){
-    const nomeImagem = form.nomeImagem().value;
-    const upload = storage.ref().child("produtos").child(nomeImagem).put()
+   
 }
 
 const form = {
