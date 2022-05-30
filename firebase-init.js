@@ -1,5 +1,3 @@
-
-
 //chave banco firebase
 //não mexe nisso
 const firebaseConfig = {
