@@ -1,3 +1,6 @@
+import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
+
 //chave banco firebase
 //não mexe nisso
 const firebaseConfig = {
@@ -9,7 +12,7 @@ const firebaseConfig = {
   appId: "1:591474947704:web:546d05a611f253a1351f8d",
   measurementId: "G-EQRKK7QWCF",
 };
-firebase.initializeApp(firebaseConfig);
-teste = firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-firebase.getStorage(teste);
+
+const storage = getStorage(firebaseApp);
