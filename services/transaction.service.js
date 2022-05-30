@@ -12,6 +12,18 @@ const transactionService = {
                 }));
             })
     },
+    findAll: user => {
+        return firebase.firestore()
+            .collection('transactions')
+            .orderBy('date', 'desc')
+            .get()
+            .then(snapshot => {
+                return snapshot.docs.map(doc => ({
+                    ...doc.data(),
+                    uid: doc.id
+                }));
+            })
+    },
     findByUid: uid => {
         return firebase.firestore()
             .collection("transactions")

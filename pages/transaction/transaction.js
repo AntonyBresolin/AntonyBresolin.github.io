@@ -160,8 +160,14 @@ function isFormValid() {
 function cancelar() {
     window.location.href = "../home/home.html";
 }
+function salvarImagem(){
+    const nomeImagem = form.nomeImagem().value;
+    const upload = storage.ref().child("produtos").child(nomeImagem).put()
+}
 
 const form = {
+    nomeImagem: () => document.getElementById('nameImage'),
+    storage: () => firebase.storage(),
     currency: () => document.getElementById('currency'),
     date: () => document.getElementById('date'),
     description: () => document.getElementById('description'),

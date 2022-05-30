@@ -18,7 +18,7 @@ function newTransaction() {
 
 function findTransactions(user) {
     showLoading();
-    transactionService.findByUser(user)
+    transactionService.findAll(user)
         .then(transactions => {
             hideLoading();
             addTransactionsToScreen(transactions);

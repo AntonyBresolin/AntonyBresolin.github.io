@@ -1,7 +1,7 @@
 //chave banco firebase
 //não mexe nisso
 const firebaseConfig = {
-  apiKey: process.env.API_KEY_FILE,
+  apiKey: "AIzaSyCRZ2yfqm-UqrvBUmzG_3o4YmO_vGGHGnY",
   authDomain: "aondetem-65bb0.firebaseapp.com",
   projectId: "aondetem-65bb0",
   storageBucket: "aondetem-65bb0.appspot.com",
