@@ -12,4 +12,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 teste = firebase.initializeApp(firebaseConfig);
 
-const storage1 = firebase.storage();
+const storage1 = firebase.storage;

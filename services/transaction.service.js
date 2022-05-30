@@ -2,7 +2,20 @@ const transactionService = {
     findByUser: user => {
         return firebase.firestore()
             .collection('transactions')
-            .where('user.uid', '==', user.uid)
+            .where('municipio', '==',  localStorage.getItem('estado'))
+            .orderBy('date', 'desc')
+            .get()
+            .then(snapshot => {
+                return snapshot.docs.map(doc => ({
+                    ...doc.data(),
+                    uid: doc.id
+                }));
+            })
+    },
+    findByMunicipio: municipio => {
+        return firebase.firestore()
+            .collection('transactions')
+            .where('municipio', '==', municipio)
             .orderBy('date', 'desc')
             .get()
             .then(snapshot => {
@@ -33,6 +46,15 @@ const transactionService = {
                 return doc.data();
             })
     },
+    findByMunicipio: municipio => {
+        return firebase.firestore()
+            .collection("transactions")
+            .doc(municipio)
+            .get()
+            .then(doc => {
+                return doc.data();
+            })
+    },
     remove: transaction => {
         return firebase.firestore()
             .collection("transactions")
@@ -51,3 +73,4 @@ const transactionService = {
             .update(transaction);
     }
 }
+

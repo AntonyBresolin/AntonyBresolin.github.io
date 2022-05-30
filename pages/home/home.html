@@ -1,37 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Home - Controle de gastos</title>
 
-    <meta charset="UTF-8">
-</head>
+    <meta charset="UTF-8" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <button type="button" class="clear" onclick="logout()">
-            Sair
-        </button>
+      <button type="button" class="clear" onclick="logout()">Sair</button>
     </header>
+    <div class="form-field">
+      <div><label>Estado *</label></div>
+      <select onchange="buscaCidades(this.value)" id="transaction-type">
+        <option value="">-- Selecione um estado --</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option value="EX">Estrangeiro</option>
+        <option>Listar os estados</option>
+        <option></option>
+      </select>
+    </div>
+    <div class="form-field">
+      <div><label>Municipio *</label></div>
+      <select id="cidade">
+        <option value="">-- Selecione um Municipio --</option>
+        <option></option>
+      </select>
+    </div>
+
+    <div>
+      <button type="button" class="outline" onclick="findTransactions()">
+        Procurar
+      </button>
+    </div>
+
     <ol id="transactions"></ol>
-    <br>
-    <br>
-    <br>
+    <br />
+    <br />
+    <br />
     <ol id="produtos"></ol>
 
     <button class="fab fixed bottom right" onclick="newTransaction()">+</button>
-</body>
+  </body>
 
-<link rel="stylesheet" href="../../global.css">
-<link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="../../global.css" />
+  <link rel="stylesheet" href="home.css" />
 
-<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
-<script src="../../firebase-init.js"></script>
-<script src="../../auth-guard.js"></script>
-<script src="../../loading.js"></script>
-<script src="../../services/transaction.service.js"></script>
-<script src="home.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+  <script src="../../firebase-init.js"></script>
+  <script src="../../auth-guard.js"></script>
+  <script src="../../loading.js"></script>
+  <script src="../../services/transaction.service.js"></script>
+  <script src="home.js"></script>
 </html>
