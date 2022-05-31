@@ -1,0 +1,98 @@
+@media (max-width: 1199.98px) {
+  .img-wrapper img{
+      width: 180px;
+  }
+
+  section#footer div.container {
+    
+  }
+}
+
+@media (max-width: 991.98px){
+  /* GLOBAL */
+  h1{
+    font-size: var(--text-medium);
+  }
+
+  /*NAVBAR*/
+  #navbar-container {
+    width: 40rem;
+    margin: 0 auto;
+  }
+
+  /* CAROUSEL-CONTAINER */
+  section#carousel-container .carousel-text h3{
+    font-size: var(--text-medium)
+  }
+
+  /* SUBSCRIBE-TRADESMAN AND DELIVERER */
+
+  div.subscribe-text{
+    width: 30rem;
+    text-align: center;
+    
+  }
+
+  section#subscribe-tradesman .btn, section#subscribe-deliverer .btn{
+    width: auto;
+  }
+
+  /* JOIN-US-ROW */
+  .profile h3{
+    font-size: var(--text-small)
+  }
+  body section#joinUs-row {
+    height: fit-content;
+  }
+
+  section#joinUs-row .profile{
+    width: 100vw;
+    padding-bottom: 10rem;
+  }
+
+  /* FOOTER */
+
+}
+
+@media (max-width: 768px){
+  /* HOME-TEXT */
+  section#container-main div.home-text{
+    text-align: center;
+    width: 25rem;
+  }
+
+  section#container-main div.home-text h2{
+    font-size: var(--text-large);
+  }
+
+  /* SWIPER */
+  section#carousel-container{
+    flex-direction: column;
+  }
+
+  .carousel-text {
+    text-align: center;
+  }
+
+  .swiper-button-prev{
+    font-size: var(--text-medium);
+    text-align: center;
+  }
+
+  .swiper-button-next{
+    font-size: var(--text-medium);
+    text-align: center;
+  }
+
+  /* SUBSCRIBE-TRADESMAN AND DELIVERER */
+  div.subscribe-text{
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  /* FOOTER */
+
+  div.footer-copyright .copyright{
+    margin: 0 1rem 0 1rem;
+  }
+}
