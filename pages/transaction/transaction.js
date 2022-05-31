@@ -97,11 +97,12 @@ function findTransactionByState(municipio) {
 }
 
 function fillTransactionScreen(transaction) {
-    if (transaction.type == "expense") {
-        form.typeExpense().checked = true;
-    } else {
-        form.typeIncome().checked = true;
-    }
+  
+form.nome().value = transaction.nome;
+  form.nomeImagem().value = imagem;
+  form.municipio().value = transaction.municipio;
+  form.telefone().value = transaction.telefone;
+
 
     form.date().value = transaction.date;
     form.currency().value = transaction.money.currency;
@@ -161,7 +162,7 @@ function createTransaction() {
         transactionType: form.transactionType().value,
         municipio: form.municipio().value,
         telefone: form.telefone().value,
-
+        nome: form.nome().value,
         description: form.description().value,
         user: {
             uid: firebase.auth().currentUser.uid,
@@ -229,6 +230,7 @@ function cancelar() {
 
 const form = {
     nomeImagem: () => document.getElementById('image'),
+    nome: () => document.getElementById('nome'),
     storage: () => firebase.storage(),
     currency: () => document.getElementById("currency"),
     date: () => document.getElementById("date"),
